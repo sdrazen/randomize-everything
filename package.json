@@ -1,0 +1,34 @@
+{
+  "name": "randomize-everything",
+  "version": "1.0.0",
+  "description": "This npm package can quickly and easily produce variety of random mock data for testing applications or any other similar purpose",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random",
+    "ranodmize",
+    "mock data",
+    "random data",
+    "test",
+    "testing",
+    "arrays",
+    "objects",
+    "numbers",
+    "data"
+  ],
+  "bugs": {
+    "url": "https://github.com/sdrazen/randomize-everything/issues",
+    "email": "sdrazen@yahoo.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdrazen/randomize-everything"
+  },
+  "author": "Dražen Škrinjarić",
+  "license": "MIT"
+}
