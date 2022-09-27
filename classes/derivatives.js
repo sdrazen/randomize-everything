@@ -491,6 +491,123 @@ class Derivatives {
 
   }
 
+  getRandomUrl(count = 1, prop = "") {
+
+    let ret;
+    let res = {};
+    let arr = [];
+
+    // Check inputs
+    if (typeof count < 1) {
+      throw new Error("Count has to be positive.");
+    }
+
+    if (typeof prop != "string") {
+      throw new Error("Property has to be string.");
+    }
+
+    // Ok
+    for (let i = 1; i <= count; i++) {
+      let word1 = new Generals().getRandom(lists.words);
+      let word2 = new Generals().getRandom(lists.words);
+      let ext = new Generals().getRandom(lists.extensions);
+      word1 = word1.replace(/'/g, '');
+      word2 = word2.replace(/'/g, '');
+      res = `https://www.${word1}.com/${word2}${ext}`;
+      arr.push(res);
+    }
+
+    if (prop == "") {
+      // No property
+      ret = count == 1 ? arr[0] : arr;
+    } else {
+      // Property
+      let arrStringified = JSON.stringify(count == 1 ? arr[0] : arr);
+      let str = "{" + `"${prop}"` + ": " + `${arrStringified}` + "}";
+      ret = JSON.parse(str);
+    }
+
+    return ret;
+
+  }
+
+  getRandomFilename(count = 1, prop = "") {
+
+    let ret;
+    let res = {};
+    let arr = [];
+
+    // Check inputs
+    if (typeof count < 1) {
+      throw new Error("Count has to be positive.");
+    }
+
+    if (typeof prop != "string") {
+      throw new Error("Property has to be string.");
+    }
+
+    // Ok
+    for (let i = 1; i <= count; i++) {
+      let word1 = new Generals().getRandom(lists.words);
+      let ext = new Generals().getRandom(lists.extensions);
+      word1 = word1.replace(/'/g, '');
+      res = `${word1}${ext}`;
+      arr.push(res);
+    }
+
+    if (prop == "") {
+      // No property
+      ret = count == 1 ? arr[0] : arr;
+    } else {
+      // Property
+      let arrStringified = JSON.stringify(count == 1 ? arr[0] : arr);
+      let str = "{" + `"${prop}"` + ": " + `${arrStringified}` + "}";
+      ret = JSON.parse(str);
+    }
+
+    return ret;
+
+  }
+
+  getRandomIpAddress(count = 1, prop = "") {
+
+    let ret;
+    let res = {};
+    let arr = [];
+
+    // Check inputs
+    if (typeof count < 1) {
+      throw new Error("Count has to be positive.");
+    }
+
+    if (typeof prop != "string") {
+      throw new Error("Property has to be string.");
+    }
+
+    // Ok
+    for (let i = 1; i <= count; i++) {
+      let num1 = new Basics().getRandomNumber(100, 255);
+      let num2 = new Basics().getRandomNumber(50, 255);
+      let num3 = new Basics().getRandomNumber(10, 255);
+      let num4 = new Basics().getRandomNumber(10, 255);
+      res = `${num1}.${num2}.${num3}.${num4}`;
+      arr.push(res);
+    }
+
+    if (prop == "") {
+      // No property
+      ret = count == 1 ? arr[0] : arr;
+    } else {
+      // Property
+      let arrStringified = JSON.stringify(count == 1 ? arr[0] : arr);
+      let str = "{" + `"${prop}"` + ": " + `${arrStringified}` + "}";
+      ret = JSON.parse(str);
+    }
+
+    return ret;
+
+  }
+
 }
 
 module.exports = {

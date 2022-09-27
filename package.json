@@ -1,6 +1,6 @@
 {
   "name": "randomize-everything",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This npm package can quickly and easily produce variety of random mock data for testing applications or any other similar purpose",
   "main": "app.js",
   "scripts": {
